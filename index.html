@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scripture Memorizer</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Scripture Memorizer</h1>
+
+  <div id="reference"></div>
+  <div id="scripture"></div>
+
+  <button id="hide-btn">Hide 3 Words</button>
+  <button id="quit-btn">Quit</button>
+  <button id="reset-btn">Reset</button>
+
+  <div id="message"></div>
+
+  <script>
+    // Word class
+    class Word {
+      constructor(text) {
+        this.text = text;
+        this.hidden = false;
+      }
+      hide() { this.hidden = true; }
+      isHidden() { return this.hidden; }
+      getDisplay() { return this.hidden ? '_'.repeat(this.text.length) : this.text; }
+    }
+
+    // Scripture class
+    class Scripture {
+      constructor(referenceText, verseText) {
+        this.referenceText = referenceText;
+        this.words = verseText
+          .split(/\s+/)
+          .filter(w => w.length > 0)
+          .map(w => new Word(w));
+      }
+      hideRandom(count) {
+        const visible = this.words.filter(w => !w.isHidden());
+        for (let i = 0; i < count && visible.length; i++) {
+          const idx = Math.floor(Math.random() * visible.length);
+          visible[idx].hide();
+          visible.splice(idx, 1);
+        }
+      }
+      allHidden() { return this.words.every(w => w.isHidden()); }
+      render() {
+        document.getElementById('reference').textContent = this.referenceText;
+        const container = document.getElementById('scripture');
+        container.innerHTML = '';
+        this.words.forEach(w => {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = w.getDisplay() + ' ';
+          if (w.isHidden()) span.classList.add('hidden');
+          container.appendChild(span);
+        });
+      }
+    }
+
+    // Initialize UI and script
+    document.addEventListener('DOMContentLoaded', () => {
+      const ref = 'John 3:16';
+      const text = 'For God so loved the world that he gave his one and only Son, ' +
+                   'that whoever believes in him shall not perish but have eternal life.';
+      const scripture = new Scripture(ref, text);
+      scripture.render();
+
+      const messageDiv = document.getElementById('message');
+      const hideBtn = document.getElementById('hide-btn');
+      const quitBtn = document.getElementById('quit-btn');
+      const resetBtn = document.getElementById('reset-btn');
+
+      hideBtn.addEventListener('click', () => {
+        scripture.hideRandom(3);
+        scripture.render();
+        if (scripture.allHidden()) {
+          messageDiv.textContent = 'All words are hidden. Well done!';
+          hideBtn.disabled = true;
+        }
+      });
+
+      quitBtn.addEventListener('click', () => {
+        messageDiv.textContent = "You quit the program.";
+        hideBtn.disabled = true;
+        quitBtn.disabled = true;
+      });
+
+      resetBtn.addEventListener('click', () => window.location.reload());
+    });
+  </script>
+</body>
+</html>
