@@ -1,0 +1,14 @@
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\bin\Debug\net9.0\ScriptureMemorizerProject.exe
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\bin\Debug\net9.0\ScriptureMemorizerProject.deps.json
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\bin\Debug\net9.0\ScriptureMemorizerProject.runtimeconfig.json
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\bin\Debug\net9.0\ScriptureMemorizerProject.dll
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\bin\Debug\net9.0\ScriptureMemorizerProject.pdb
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.AssemblyInfo.cs
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.dll
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\refint\ScriptureMemorizerProject.dll
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.pdb
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ScriptureMemorizerProject.genruntimeconfig.cache
+C:\Users\User\OneDrive\Desktop\Scripture Memorizer Project\obj\Debug\net9.0\ref\ScriptureMemorizerProject.dll
